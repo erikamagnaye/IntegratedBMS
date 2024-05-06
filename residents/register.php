@@ -1,3 +1,5 @@
+<?php include 'server/server.php' ?>
+
 <?php
 // Database connection parameters
 $servername = "localhost";
@@ -62,7 +64,7 @@ $conn->close();
 ?>
 
 
-<!doctype html>
+<!Doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">

@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(0);
 // Database connection parameters
 $servername = "localhost";
 $username = "root";
@@ -25,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // User authenticated, redirect to success page
+        $_SESSION['login'] = $_POST['email'];
+		$_SESSION['id'] = $result['id'];
         header("Location: dashboard.php");
         exit();
     } else {
@@ -42,7 +46,7 @@ $conn->close();
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login and Registration Form</title>
+<title>Login Form</title>
 <style>
     
     body {
